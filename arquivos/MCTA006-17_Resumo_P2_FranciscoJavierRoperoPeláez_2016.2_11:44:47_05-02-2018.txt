@@ -1,0 +1,27 @@
+Qual tipo de input faz o circuito do monoestável do projeto ao iniciar a geração de um pulso
+0v
+
+Qual tipo de input faz o 555 em funcionamento monoestável iniciar a geração de um pulso
+Uma descida curta
+
+Qual tipo de input faz o circuito astável do projeto iniciar a geração dos pulsos
+Nada
+
+Qual o motivo da utilização de contagem gray para o projeto dos semáforos
+A variação de um bit deixar o circuito mais rápido
+
+O que deve ser feito para um flip-flop J-K dispare em modo toggle
+Duas entradas em 1
+
+No circuito do semáforo, qual o dispositivo responsável por apagar (dependendo das circunstâncias) alguns dos pulsos gerado pelo circuito astável
+Multiplexor
+
+Qual o número mínimo de multiplexores de três bits que são necessários para implementar uma tabela de quatro entradas e uma saída
+1
+
+
+2 3096
+3 3127
+
+
+

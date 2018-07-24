@@ -1,0 +1,397 @@
+DATA DE ATUALIZAÇÃO: 
+Mon Nov 28 08:26:25 BRST 2016
+
+CUSTO DE UM ALGORITMO:
+---------------------
+
+- Exercício
+  Dada uma matriz Anxm de inteiros considere os seguintes algoritmos baseados em
+  comparações para encontrar o maior elemento:
+  (a) Acha-se o máximo de cada linha, armazenando-se os resultados em um vetor, e
+  depois acha-se o máximo do vetor. 
+  (b) Acha-se o máximo de cada coluna, armazenando-se os resultados em um vetor, e
+  depois acha-se o máximo do vetor. 
+  supondo-se que n<m, qual deles realiza menos comparações? Justifique. 
+
+- Exercício
+  Indique, dado o valor de N, o número de vezes que a variável sum é atualizada.
+
+  int A1 (int N) {
+      int i, j, sum=0;
+      for (i=1; i<=N; i*=2)
+          for(j=0; j<i; j++)
+              sum++;
+     return sum;
+  } 
+  
+  int A2 (int N) {
+      int i, j, sum=0;
+      for (i=1; i<=N; i*=4)
+          for(j=0; j<i; j++)
+              sum++;
+     return sum;
+  } 
+
+  int B1 (int N) {
+      int n, i, sum=0;
+      for (n=N; n>0; n/=2)
+          for (i=0; i<n; i++) 
+              sum++;
+      return sum;
+  }   
+
+  int B1 (int N) {
+      int n, i, sum=0;
+      for (n=N; n>0; n/=4)
+          for (i=0; i<n; i++) 
+              sum++;
+      return sum;
+  }   
+
+- Exercício
+  Uma empresa deseja comprar um software para resolver sistemas lineares. Existem
+  no mercado quatro programas para tal tarefa com custos operacionais
+  diferentes. Seja n o tamanho da entrada para o sistema.
+  -- ExtremeLS 5(n^3)/2 + 2n/3, 
+  -- LUmaster (n^3)/3 - (n^2)/4 + n/3, 
+  -- superQR 2(n^3)/3 + n/2 - n/4, 
+  -- DonkeyShot (n^4)/9 + n. 
+  Qual deles você escolheria? Justifique sua resposta.
+
+- Exercício
+  Entre n pessoas, uma celebridade é definida como sendo uma pessoa que é
+  conhecida por todos, mas não conhece ninguém. Descreva um algoritmo que fazendo
+  perguntas da forma "Você conhece x?" encontra, se existir, uma celebridade
+  em um grupo com n pessoas. O número de perguntas deve ser da ordem linear.
+
+
+VETORES E MATRIZES:
+-------------------
+
+- Exercício
+  O autor da função abaixo afirma que ela decide se x está no vetor v[0..n-1].
+  Critique o código.
+  
+  int busc( int x, int v[], int n ) {
+      if (v[n-1]==x)
+          return 1;
+      else
+          return busc (x, v, n-1);
+  }
+
+- Exercício
+  Crie uma função que permita somar dois vetores de números inteiros.
+
+- Exercício
+  Crie uma função que permita somar duas matrizes bidimensionais de números inteiros.
+
+- Exercício
+  Crie uma função que permita verificar se três vetores de número inteiros são
+  iguais, isto é, contenham os mesmos elementos.
+
+
+
+RECURSÃO:
+---------
+
+- Exercício
+  Uma função recursiva é aquela que se chama a si mesma (obrigatoriamente)?
+
+- Exercício
+  Crie uma função recursiva para somar todos os elementos de um vetor de números
+  inteiros.
+
+- Exercício
+  Crie uma função recursiva para somar todos os elementos de uma matriz
+  bidimensional de números inteiros.
+
+- Exercício
+  Crie uma função recursiva para converter um número de base 10 para a base 2.
+
+- Exercício
+  Se X é uma função recursiva abaixo, qual o valor de X(4)?
+  int X(int n) {
+      if (n==1 || n==2)
+          return n;
+      else
+          return X(n-1) + n*X(n-2);
+  }
+
+- Exercício
+  O que há de errado com a seguinte função recursiva?
+  int XX(int n) {
+      if (n==0)
+          return 0;
+      else
+          return XX(n/3 + 1) + n;
+  }
+
+- Exercício
+  Verifique que a seguinte função é equivalente à função Máximo. Ela usa a
+  aritmética de ponteiros.
+
+  int maximo2r (int v[], int n) {
+      int x;
+      if (n==1)
+          return v[0];
+      x = maximo2r (v+1, n-1);
+      if (x>v[0])
+          return x;
+      retunr v[0];
+  }
+
+- Exercício
+  Escreva uma função recursiva que calcule a soma dos dígitos decimais de um
+  inteiro positivo. A soma dos dígitos de 132, por exemplo é 6.
+
+- Exercício
+  Escreva uma função recursiva que calcule a diferença entre o valor de um
+  elemento máximo e o valor de um elemento mínimo do vetor v[0..n-1].
+
+
+PONTEIROS:
+----------
+
+- Exercício
+  Se i é uma variável do tipo int, que sentido fazem as expressões *&i e &&i?
+
+- Exercício
+  Suponha que o vetor v e a variável k foram declarados assim:
+  int v[100], k;
+  Descreva, em português, a sequência de operações que deve ser executada para
+  calcular o valor da expressão &v[k+9].
+
+- Exercício
+  Crie uma função que recebe ponteiro para a posição inicial de um vetor e imprima todos os
+  elementos do vetor utilizando aritmética de ponteiros.
+
+- Exercício
+  Crie uma função que recebe um ponteiro para a posição inicial de uma matriz e
+  imprima todos os elementos da matriz utilizando aritmética de ponteiros.
+
+- Exercício
+  Qual o valor da variável x após a execução destas operações:
+	int x = 2;
+	int * y = & x ;
+	* y = 3;
+	printf ("%d\n",x );
+
+- Exercício
+  Qual o valor da variável x após a execução destas operações:
+	int x = 10;
+	int * y = & x ;
+	int * z = & x ;
+	int c = *y + * z ;
+	* y = c ;
+	printf ("%d\n",x );
+
+- Exercício
+  Qual o valor da variável x após a execução destas operações:
+	int x = 1;
+	x ++;
+	int * y = & x ;
+	* y = * y + 1;
+	printf ("%d\n",x );
+
+- Exercício
+  Qual o valor da variável x após a execução destas operações:
+	int x = 1;
+	x ++;
+	int * y = & x ;
+	y = y + 1;
+	printf ("%d\n",x );
+
+- Exercício
+  Crie uma função que recebe um ponteiro para a posição inicial de um vetor e
+  recebe o tamanho do vetor. Preencha esse vetor com o valor 0 utilizando aritmética de
+  ponteiros.
+
+- Exercício
+  Crie uma função que recebe um ponteiro para a posição inicial de uma matriz e
+  recebe o tamanho da matriz. Preencha essa matriz com o valor 0 utilizando aritmética de
+  ponteiros.
+
+- Exercício
+  Crie uma função que imprime o valores das posições pares de um vetor
+  utilizando aritmética de ponteiros para percorrer o vetor.
+
+- Exercício
+  Crie uma função que imprime os valores da posições ímpares de um vetor
+  utilizando aritmética de ponteiros para percorrer o vetor.
+
+
+
+PASSAGEM DE PARÂMETROS
+---------------------
+
+- Exercício Novo
+  O que é uma passagem de parâmetros por valor? 
+
+- Exercício Novo
+  O que é uma passagem de parâmetros por referência?
+
+
+
+ESTRUTURAS E ÁRVORES:
+---------------------
+
+- Exercício Novo
+  O que é uma lista ligada? Defina uma estrutura na linguagem C que permita armazenar números
+  reais. Desenhe uma lista ligada contendo 4 elementos.
+
+- Exercício Novo
+  O que é uma árvore binária? O que é uma árvore de busca binária?
+
+- Exercício Novo
+  Considere um árvore binária. Defina uma estrutura que permita armazenar um
+  vetor de 100 elementos inteiros em cada célula (i.e., cada nó) da árvore.
+
+- Exercício Novo
+  Quantos campos iguais a NULL possui a estrutura de armazenamento de uma árvore
+  binária qualquer?
+
+- Exercício Novo
+  Desenhe uma árvore binária que com 17 nós que tenha a menor altura possível.
+  Repita com a maior altura possível.
+
+- Exercício Novo
+  Escreva uma função que decida se uma dada árvore binária é ou não é de busca.
+
+- Exercício Novo
+  Escreva uma função min que encontre uma chave mínima em uma árvore de busca.
+  Escreva uma função max que encontre uma chave máxima.
+
+- Exercício Novo
+  Suponha que as chaves 50, 30, 70, 20, 40, 60, 80, 15, 25, 35, 45, 36 são
+  inseridas, nesta ordem, em uma árvore de busca inicialmente vazia. Desenhe a
+  árvore que resulta.
+
+- Exercício Novo
+  Escreva um método recursivo que devolva o número de nós de uma árvore
+  binária.
+
+
+
+BUSCA:
+------
+
+- Exercício Novo
+  O algoritmo abaixo está correto ou errado? Se estiver correto, mostre por meio
+  de um exemplo sua corretude. Se estiver errado identifique e corrija o erro.
+
+  int pesquisa(int * v, int l, int r, int x) {
+      if (l==r) 
+          return l;
+      else {
+          m = l+(r-l+1)/2;
+          if (x <= v[m]) 
+              return pesquisa(v,l,m,x);
+          else 
+              return pesquisa(v,m+1,r,x);
+      }
+  }
+
+- Exercício
+  O elemento minimax de uma matriz é o menor elemento da linha que contém o
+  maior elemento de uma matriz. Desenvolva um algoritmo para encontrar o elemento
+  minimax de uma matriz M de números inteiros com n linhas e m colunas.
+  Assinatura: int minimax(int n, int m, int M[n][m])
+
+- Exercício Novo
+  Na seguinte função preencha os "??" corretamente para que o algoritmo permita
+  fazer a busca de um elemento x em um vetor V[0,..., n-1]. 
+
+  int buscabinaria( int x, int n, int v[]) {
+      int m, e = ??,  d = ??;
+      while (e ?? d-1) {
+          m = (e + d)/2;
+          if (v[m] ?? x) e = m;
+          else d = m; }
+      return ??; 
+  }  
+
+- Exercício Novo
+  Crie um algoritmo que permita realizar a busca binária de um elemento em um
+  vetor ordenado. Se o elemento não estiver no vetor, então deve-se devolver o
+  índice do elemento mais próximo ao elemento procurado.
+
+- Exercício Novo
+  Crie uma versão iterativa do algoritmo de busca binária, isto é, use um laço
+  para procurar um elemento em um vetor ordenado.
+
+
+MÉTODOS DE ORDENAÇÃO:
+---------------------
+
+- Exercício Novo
+  O que é uma sequência crescente? O que é uma sequência estritamente crescente?
+
+- Exercício Novo
+  Crie um algoritmo para verificar se o vetor dado como entrada é estritamente
+  crescente.
+
+- Exercício Novo
+  Crie uma versão recursiva do algoritmo de ordenação insertionSort.
+
+- Exercício Novo
+  Nas duas versões do algoritmo bubbleSort visto em aula indique o número mínimo
+  e número máximo de comparações entre elementos do vetor.
+
+- Exercício Novo
+  No algoritmo quickSort visto em aula qual seria a função do elemento
+  denominado como pivô?
+
+- Exercício Novo
+  Qual é o número máximo de comparações, entre elementos do vetor, que são
+  necessários para ordenar de forma crescente um vetor usando o algoritmo
+  quickSort? Justifique.
+
+- Exercício
+  O Prof. Coutinho apresentou o seguinte procedimento que recebe um vetor
+  v[0,..,n-1] de n elementos. Qual é o resultado da execução deste
+  procedimento para v={62, 31, 84, 96, 19, 47} de n=6 elementos.
+
+  void Countinho (int v[], int n) {
+      int i, j, count[n], s[n];
+      
+      for (i=0; i<n; i++)
+          count[i] = 0;
+    
+      for (i=0; i<n-1; i++) {
+          for (j=i+1; j<n; j++) {
+              if (v[i]<v[j])
+                  count[j] += 1;
+              else
+                  count[i] += 1;
+          }
+      }    
+      for (i=0; i<n; i++)
+          s[count[i]] = v[i];    
+      for (i=0; i<n; i++)
+          v[i] = s[i];
+  }
+
+- Exercício Novo
+  Em uma lanchonete o cozinheiro era um fanático por algoritmos de ordenação e
+  especialistas em fazer panquecas. Mesmo longe de seu computador ele não consegue
+  se desligar dos algoritmos.  Todos os dias, depois de fritar as panquecas, ele
+  as ordena em ordem decrescente de diàmetro, ou seja, as maiores embaixo e as
+  menores em cima. A única operação de que ele dispõe é a operaçãoo de enfiar a
+  espátula em uma posição qualquer da pilha de panquecas e inverter toda a pilha
+  dali para cima. Com isso, as panquecas abaixo da espátula permanecem em suas
+  posições, a panqueca que estava imediatamente em cima da espátula vai parar no
+  topo, a que estava a seguir vai parar embaixo dessa, e assim por diante, até a
+  panqueca que estava no topo.
+  Suponha que são dados os diâmetros das n panquecas em um vetor v[0,...,n-1] (a
+  panqueca na primeira posição do vetor está no fundo da pilha) e suponha que o
+  único método disponível é flip(v, k, n) que inverte a ordem das panquecas como
+  descrito acima a partir da posição k (assim, flip(v, 0, n) inverteria toda a
+  pilha). Escreva um algoritmo para ordenar as panquecas que faça um número linear
+  de chamadas ao método flip.
+
+
+REFERÊNCIAS:
+------------
+[1] SZWARCFITER, J. L.; MARKEZON, L. Estruturas de Dados e seus Algoritmos, 3a edição, LTC, 2010.
+[2] FEOFILOFF, P. Projeto de Algoritmos em C. http://www.ime.usp.br/~pf/algoritmos/
+
